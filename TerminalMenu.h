@@ -1,3 +1,11 @@
+/*
+Code of @DomySh
+This code is create for personal hobby...
+You can use my code citing me!
+Comments can be in ITALIAN!
+GNU General Public License v3.0
+*/
+
 #include <iostream>
 #include <vector>
 #include <thread>
