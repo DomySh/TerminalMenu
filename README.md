@@ -8,7 +8,7 @@ For example: MenuCreate(v,"SELECT THE ANSWERE","<<:-|",1);
 The is the principal function that create the menu and return the number of the position of the voice in the vector
 This function is thinked to use with a switch case:
 
-###Example of code
+### Example of code
 ```
 switch(MenuCreate(...)){
   case 0:
@@ -19,7 +19,7 @@ switch(MenuCreate(...)){
 - ToVec(char** arr,int len) 
 Simple function for convert Array of strings in vector of string
 
-###Example of code
+### Example of code
 ```
 char *selection[]={"sel 1","sel 2","sel 3",};
 int answer = MenuCreate( ToVec(selection) );
@@ -32,7 +32,7 @@ Stupid function that simulate -> system("pause") (In windows this command corris
 - getch() 
 Getch function (normaly present in conio.h) in MacOs
 
-##Other Function
+## Other Function
 
 - detectKey()
 - PrintLineMenu(const std::vector<std::string> &lines,int pos,int arrow,const char *SymArrow="<-")
