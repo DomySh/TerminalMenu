@@ -65,7 +65,7 @@ GNU General Public License v3.0
 	}
 #endif
 
-std::vector<std::string> ToVec(char** arr,int len){
+std::vector<std::string> ToVec(std::string arr[],int len){
 	using namespace std;
 	vector<string> v;
 	for(int i=0;i<len;i++){
@@ -120,5 +120,6 @@ int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",
 			break;
 		}
 	}
+	system(CLEAR_COMM);
 	return n;			
 }
