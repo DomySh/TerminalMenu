@@ -26,6 +26,7 @@ GNU General Public License v3.0
 		}
 	}
 	void SysPause(){
+		std::cin.ignore();
 		std::cout<<std::endl;
 		system("pause");
 	}
@@ -59,6 +60,7 @@ GNU General Public License v3.0
 		return c;
 	}
 	void SysPause(){
+		std::cin.ignore();
 		std::cout << "\nPremere un tasto per continuare...";
 		getch();
 		std::cout<<std::endl;
@@ -121,5 +123,6 @@ int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",
 		}
 	}
 	system(CLEAR_COMM);
+	cin.ignore();
 	return n;			
 }
