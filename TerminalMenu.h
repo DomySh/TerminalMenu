@@ -123,6 +123,5 @@ int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",
 		}
 	}
 	system(CLEAR_COMM);
-	cin.ignore();
 	return n;			
 }
