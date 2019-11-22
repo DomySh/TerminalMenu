@@ -9,7 +9,7 @@ The is the principal function that create the menu and return the number of the 
 This function is thinked to use with a switch case:
 
 ## IMPORTANT
-### IF YOU WANT TO USE INPUT WHILE USING MENU CREATE FUNCTION YOU MUST USE "getLine(cin,{*string})"
+### IF YOU WANT TO USE INPUT WHILE USING MENU CREATE FUNCTION YOU MUST USE "getLine(cin,{string})"
 
 ### Example of code
 ```
