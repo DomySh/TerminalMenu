@@ -94,7 +94,7 @@ void PrintMenu(const std::vector<std::string> &lines,int arrow,const char* intes
 	}
 }
 
-int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",const char* arrsym="<-",int n=0){
+int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",int n=0,const char* arrsym="<-"){
 	using namespace std;
 	bool enter=false;
 	while(!enter){
