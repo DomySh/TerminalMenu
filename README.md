@@ -12,7 +12,7 @@ This function is thinked to use with a switch case:
 ## IMPORTANT
 ### IF YOU WANT TO USE INPUT WHILE USING MENU CREATE FUNCTION YOU MUST USE "getLine(cin,{string})"
 
-### Example of code
+### Examples of code
 ```
 switch(MenuCreate(...)){
   case 0:
@@ -20,11 +20,9 @@ switch(MenuCreate(...)){
   case 1 [...]
 }
 ```
-
-### Example of code
 ```
 char *selection[]={"sel 1","sel 2","sel 3",};
-int answer = MenuCreate( ToVec(selection) );
+int answer = MenuCreate( selection );
 ```
 
 - SysPause() 
