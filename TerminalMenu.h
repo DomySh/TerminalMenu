@@ -22,6 +22,7 @@ void inBufferClear(){
 	int detectKey(){
 		while(true){
 			if(GetAsyncKeyState(VK_RETURN)<0){
+				std::cin.ignore();
 				return VK_RETURN;
 			}else if(GetAsyncKeyState(VK_UP)<0){
 				return VK_UP;
@@ -30,6 +31,7 @@ void inBufferClear(){
 			}
 		}
 	}
+
 	void SysPause(){
 		inBufferClear();
 		std::cout<<std::endl;
@@ -136,8 +138,8 @@ int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",
 			break;
 		}
 	}
-	inBufferClear();
 	system(CLEAR_COMM);
+	inBufferClear();
 	return n;			
 }
 int MenuCreate(std::string arr[],int length,const char* intestation="",int n=0,const char* arrsym="<-"){
