@@ -3,6 +3,7 @@ A c++ Library that can create a Selection menu in termial
 In this header file there are function (Compatible with Mac OSX and Windows) for create the Menu:
 
 - MenuCreate(const std::vector<std::string> &voice,const char* intestation="",int n=0,const char* arrsym="<-")
+                  ^ -> can be also an array of strings or an array of char array
 
 For example: MenuCreate(v,"SELECT THE ANSWERE","<<:-|",1);
 The is the principal function that create the menu and return the number of the position of the voice in the vector
@@ -19,8 +20,6 @@ switch(MenuCreate(...)){
   case 1 [...]
 }
 ```
-- ToVec(std::string arr[],int len) 
-Simple function for convert Array of strings in vector of string
 
 ### Example of code
 ```
