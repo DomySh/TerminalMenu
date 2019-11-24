@@ -9,7 +9,7 @@ For example: MenuCreate(v,"SELECT THE ANSWERE","<<:-|",1);
 The is the principal function that create the menu and return the number of the position of the voice in the vector
 This function is thinked to use with a switch case:
 
-### Examples of code
+### General use of the function
 ```
 switch(MenuCreate(...)){
   case 0:
@@ -17,6 +17,7 @@ switch(MenuCreate(...)){
   case 1 [...]
 }
 ```
+### Example
 ```
 #include <iostream>
 #include "TerminalMenu.h"
@@ -42,7 +43,10 @@ Function that simulate -> system("pause") (In windows this command corrispond to
 
 
 - getch() 
-Getch function (normaly present in conio.h) in MacOs
+Getch function in MacOs(normaly present for windows in <conio.h>)
+
+- inBufferClear()
+Function that clear the input Buffer (Used for delete bugs using input in MenuCreate and SysPause)
 
 ## Other Function
 
