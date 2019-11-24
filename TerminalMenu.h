@@ -11,6 +11,11 @@ GNU General Public License v3.0
 #include <thread>
 #include <chrono>
 
+void inBufferClear(){
+	std::cin.clear();
+	std::fflush(stdin);
+}
+
 #ifdef _WIN64
 	#define CLEAR_COMM "cls"
 	#include <windows.h>
@@ -26,7 +31,7 @@ GNU General Public License v3.0
 		}
 	}
 	void SysPause(){
-		std::cin.ignore();
+		inBufferClear();
 		std::cout<<std::endl;
 		system("pause");
 	}
@@ -60,14 +65,22 @@ GNU General Public License v3.0
 		return c;
 	}
 	void SysPause(){
-		std::cin.ignore();
 		std::cout << "\nPremere un tasto per continuare...";
+		inBufferClear();
 		getch();
 		std::cout<<std::endl;
 	}
 #endif
 
 std::vector<std::string> ToVec(std::string arr[],int len){
+	using namespace std;
+	vector<string> v;
+	for(int i=0;i<len;i++){
+		v.push_back(arr[i]);
+	}
+	return v;
+}
+std::vector<std::string> ToVec(char *arr[],int len){
 	using namespace std;
 	vector<string> v;
 	for(int i=0;i<len;i++){
@@ -97,6 +110,7 @@ void PrintMenu(const std::vector<std::string> &lines,int arrow,const char* intes
 int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",int n=0,const char* arrsym="<-"){
 	using namespace std;
 	bool enter=false;
+	inBufferClear();
 	while(!enter){
 		PrintMenu(voice,n,intestation,arrsym);
 		this_thread::sleep_for(chrono::milliseconds(100));
@@ -122,6 +136,13 @@ int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",
 			break;
 		}
 	}
+	inBufferClear();
 	system(CLEAR_COMM);
 	return n;			
+}
+int MenuCreate(std::string arr[],int length,const char* intestation="",int n=0,const char* arrsym="<-"){
+	return MenuCreate(ToVec(arr,length),intestation,n,arrsym);
+}
+int MenuCreate(char ** arr,int length,const char* intestation="",int n=0,const char* arrsym="<-"){
+	return MenuCreate(ToVec(arr,length),intestation,n,arrsym);
 }
