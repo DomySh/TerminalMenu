@@ -9,9 +9,6 @@ For example: MenuCreate(v,"SELECT THE ANSWERE","<<:-|",1);
 The is the principal function that create the menu and return the number of the position of the voice in the vector
 This function is thinked to use with a switch case:
 
-## IMPORTANT
-### IF YOU WANT TO USE INPUT WHILE USING MENU CREATE FUNCTION YOU MUST USE "getLine(cin,{string})"
-
 ### Examples of code
 ```
 switch(MenuCreate(...)){
@@ -21,12 +18,27 @@ switch(MenuCreate(...)){
 }
 ```
 ```
-char *selection[]={"sel 1","sel 2","sel 3",};
-int answer = MenuCreate( selection );
+#include <iostream>
+#include "TerminalMenu.h"
+
+
+int main(){
+  char *selection[]={"Print Hello","exit"};
+  while(true){
+    switch(MenuCreate( selection,2 )){
+      case 0:
+        std::cout << "Hello World!"<< std::endl;
+        SysPause(); //Read under this example for discover this function
+        break;
+      case 1:
+        return 0;
+    }
+  }
+}
 ```
 
 - SysPause() 
-Stupid function that simulate -> system("pause") (In windows this command corrispond to that)
+Function that simulate -> system("pause") (In windows this command corrispond to that)
 
 
 - getch() 
