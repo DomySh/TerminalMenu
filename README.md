@@ -22,7 +22,7 @@ switch(MenuCreate(...)){
 #include "TerminalMenu.h"
 
 int main(){
-  char *selection[]={"Print Hello","exit"};
+  char *selection[]={"Print Hello","exit"}; //array of string is also accepted
   while(true){
     switch(MenuCreate( selection,2 )){
       case 0:
