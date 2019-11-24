@@ -21,7 +21,6 @@ switch(MenuCreate(...)){
 #include <iostream>
 #include "TerminalMenu.h"
 
-
 int main(){
   char *selection[]={"Print Hello","exit"};
   while(true){
@@ -35,6 +34,7 @@ int main(){
     }
   }
 }
+
 ```
 
 - SysPause() 
