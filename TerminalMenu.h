@@ -11,10 +11,7 @@ GNU General Public License v3.0
 #include <thread>
 #include <chrono>
 
-void inBufferClear(){
-	std::cin.clear();
-	std::fflush(stdin);
-}
+
 
 #ifdef _WIN64
 	#define CLEAR_COMM "cls"
@@ -31,6 +28,13 @@ void inBufferClear(){
 			}
 		}
 	}
+	
+	void inBufferClear(){
+		using namespace std;
+		cin.clear();
+		cin.sync();
+		fflush(stdin);  
+	}
 
 	void SysPause(){
 		inBufferClear();
@@ -40,23 +44,44 @@ void inBufferClear(){
 #else
 	#include <termios.h>
 	#include <unistd.h>
+	
 	#define CLEAR_COMM "clear"
 	#define VK_RETURN 10 
 	#define VK_UP 65
 	#define VK_DOWN 66
-	int getch() {
+
+	#ifdef __APPLE__
+		void inBufferClear(){
+			using namespace std;
+			cin.clear();
+			cin.sync();
+			fflush(stdin);  
+		}
+	#else
+		#include <stdio_ext.h>
+		void inBufferClear(){
+			using namespace std;
+			__fpurge(stdin);
+			cin.clear();
+			cin.sync();
+			fflush(stdin);  
+		}
+	#endif
+	int getch(void){
 		using namespace std;
-		struct termios oldt,
-		newt;
+		struct termios oldt, newt;
 		int ch;
-		tcgetattr( STDIN_FILENO, &oldt );
+
+		tcgetattr(STDIN_FILENO, &oldt);
 		newt = oldt;
-		newt.c_lflag &= ~( ICANON | ECHO );
-		tcsetattr( STDIN_FILENO, TCSANOW, &newt );
+		newt.c_lflag &= ~(ICANON | ECHO);
+		tcsetattr(STDIN_FILENO, TCSANOW, &newt);
 		ch = getchar();
-		tcsetattr( STDIN_FILENO, TCSANOW, &oldt );
+		tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+
 		return ch;
-	}	
+	}
+
 	int detectKey(){
 		char c;
 		c = getch();
