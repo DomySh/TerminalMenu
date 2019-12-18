@@ -1,6 +1,7 @@
 # TerminalMenu.h
+## Multiplatform Library for Terminal Menu (Windows,OSX,GNU/Linux) 
 A c++ Library that can create a Selection menu in termial
-In this header file there are function (Compatible with Mac OSX and Windows) for create the Menu:
+In this header file there are function (Compatible with Mac OSX, Windows and Linux (Tested on Arch Manjaro)) for create the Menu:
 
 - MenuCreate(std::string arr[],int length,const char* intestation="",int n=0,const char* arrsym="<-")
 
