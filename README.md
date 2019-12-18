@@ -1,7 +1,6 @@
 # TerminalMenu.h
 ## Multiplatform Library for Terminal Menu (Windows, OSX, GNU/Linux) 
-![Screenshot of terminal menu](TerminalMenu.png)
-<div style="text-align:center"><img src="TerminalMenu.png" /></div>
+<center><img src="TerminalMenu.png" /></center>
 A c++ Library that can create a Selection menu in termial
 In this header file there are function (Compatible with Mac OSX, Windows and Linux (Tested on Arch Manjaro)) for create the Menu:
 
