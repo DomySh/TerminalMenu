@@ -1,4 +1,4 @@
-<h1> TerminalMenu.h </h1>
+<h1> TerminalMenu </h1>
 
 ## Multiplatform Library for Terminal Menu (Windows, OSX, GNU/Linux) 
 <center><img src="TerminalMenu.png" /></center>
