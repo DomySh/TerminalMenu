@@ -173,18 +173,3 @@ int MenuCreate(std::string arr[],int length,std::string intestation="",int n=0,c
 int MenuCreate(char ** arr,int length,std::string intestation="",int n=0,const char* arrsym="<-"){
 	return MenuCreate(ToVec(arr,length),intestation,n,arrsym);
 }
-//With Array of Char
-/*
-int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",int n=0,const char* arrsym="<-"){
-	std::string intest = intestation;
-	return MenuCreate(voice,intest,n,arrsym);
-}
-int MenuCreate(std::string arr[],int length,const char* intestation="",int n=0,const char* arrsym="<-"){
-	std::string intest = intestation;
-	return MenuCreate(ToVec(arr,length),intest,n,arrsym);
-}
-int MenuCreate(char ** arr,int length,const char* intestation="",int n=0,const char* arrsym="<-"){
-	std::string intest = intestation;
-	return MenuCreate(ToVec(arr,length),intest,n,arrsym);
-}
-*/
