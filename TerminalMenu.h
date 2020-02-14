@@ -125,7 +125,7 @@ void PrintLineMenu(const std::vector<std::string> &lines,int pos,int arrow,const
 	cout << endl;
 }
 
-void PrintMenu(const std::vector<std::string> &lines,int arrow,const char* intestation="",const char* arrsym="<-"){
+void PrintMenu(const std::vector<std::string> &lines,int arrow,std::string intestation="",const char* arrsym="<-"){
 	using namespace std;
 	system(CLEAR_COMM);
 	cout << intestation ;
@@ -134,7 +134,7 @@ void PrintMenu(const std::vector<std::string> &lines,int arrow,const char* intes
 	}
 }
 
-int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",int n=0,const char* arrsym="<-"){
+int MenuCreate(const std::vector<std::string> &voice,std::string intestation="",int n=0,const char* arrsym="<-"){
 	using namespace std;
 	bool enter=false;
 	inBufferClear();
@@ -167,9 +167,24 @@ int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",
 	inBufferClear();
 	return n;			
 }
-int MenuCreate(std::string arr[],int length,const char* intestation="",int n=0,const char* arrsym="<-"){
+int MenuCreate(std::string arr[],int length,std::string intestation="",int n=0,const char* arrsym="<-"){
 	return MenuCreate(ToVec(arr,length),intestation,n,arrsym);
+}
+int MenuCreate(char ** arr,int length,std::string intestation="",int n=0,const char* arrsym="<-"){
+	return MenuCreate(ToVec(arr,length),intestation,n,arrsym);
+}
+//With Array of Char
+/*
+int MenuCreate(const std::vector<std::string> &voice,const char* intestation="",int n=0,const char* arrsym="<-"){
+	std::string intest = intestation;
+	return MenuCreate(voice,intest,n,arrsym);
+}
+int MenuCreate(std::string arr[],int length,const char* intestation="",int n=0,const char* arrsym="<-"){
+	std::string intest = intestation;
+	return MenuCreate(ToVec(arr,length),intest,n,arrsym);
 }
 int MenuCreate(char ** arr,int length,const char* intestation="",int n=0,const char* arrsym="<-"){
-	return MenuCreate(ToVec(arr,length),intestation,n,arrsym);
+	std::string intest = intestation;
+	return MenuCreate(ToVec(arr,length),intest,n,arrsym);
 }
+*/
