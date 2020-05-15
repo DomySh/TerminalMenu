@@ -14,7 +14,6 @@ GNU General Public License v3.0
 
 
 #ifdef _WIN64
-	#define CLEAR_COMM "cls"
 	#include <windows.h>
 	int detectKey(){
 		while(true){
@@ -45,7 +44,6 @@ GNU General Public License v3.0
 	#include <termios.h>
 	#include <unistd.h>
 	
-	#define CLEAR_COMM "clear"
 	#define VK_RETURN 10 
 	#define VK_UP 65
 	#define VK_DOWN 66
@@ -99,6 +97,10 @@ GNU General Public License v3.0
 	}
 #endif
 
+void clearSc(){
+	std::cout << "\e[1;1H\e[2J";
+}
+
 std::vector<std::string> ToVec(std::string arr[],int len){
 	using namespace std;
 	vector<string> v;
@@ -127,7 +129,7 @@ void PrintLineMenu(const std::vector<std::string> &lines,int pos,int arrow,const
 
 void PrintMenu(const std::vector<std::string> &lines,int arrow,std::string intestation="",const char* arrsym="<-"){
 	using namespace std;
-	system(CLEAR_COMM);
+	clearSc();
 	cout << intestation ;
 	for(int i =0;i<lines.size();i++){
 		PrintLineMenu(lines,i,arrow,arrsym);
@@ -163,7 +165,7 @@ int MenuCreate(const std::vector<std::string> &voice,std::string intestation="",
 			break;
 		}
 	}
-	system(CLEAR_COMM);
+	clearSc();
 	inBufferClear();
 	return n;			
 }
