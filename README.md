@@ -2,8 +2,8 @@
 
 ## Multiplatform Library for Terminal Menu (Windows, OSX, GNU/Linux) 
 <center><img src="TerminalMenu.png" /></center>
-A c++ Library that can create a Selection menu in termial
-In this header file there are function (Compatible with Mac OSX, Windows and Linux (Tested on Arch Manjaro)) for create the Menu:
+A c++ and python Library that can create a Selection menu in termial
+In this header file there are function (Compatible with Mac OSX, Windows and Linux ) for create the Menu:
 
 - MenuCreate(std::string arr[],int length,const char* intestation="",int n=0,const char* arrsym="<-")
 
@@ -55,3 +55,7 @@ Function that clear the input Buffer (Used for delete bugs using input in MenuCr
 - detectKey()
 - PrintLineMenu(const std::vector<std::string> &lines,int pos,int arrow,const char *SymArrow="<-")
 - PrintMenu(const std::vector<std::string> &lines,int arrow,const char* intestation="",const char* arrsym="<-")
+
+Not the same function are writed in python
+In python you need to install also pynput
+```pip install pynput```
