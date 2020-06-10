@@ -58,4 +58,5 @@ Function that clear the input Buffer (Used for delete bugs using input in MenuCr
 
 Not the same function are writed in python
 In python you need to install also pynput
+
 ```pip install pynput```
